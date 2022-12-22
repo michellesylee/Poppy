@@ -1,0 +1,174 @@
+/* //@import 'bootstrap/dist/css/bootstrap.min.css'; */
+/* import 'react-bootstrap/dist/react-bootstrap.min.js'; */
+
+
+.poppy {
+    margin-left: 20px;
+    height: 200px;
+    width: 450px;
+}
+
+.buttons {
+    margin-left: 500px;
+    margin-top: 80px;
+    align-items: flex-end;
+    justify-content: flex-end
+    /* margin-right: 500px */
+}
+
+.navButtons {
+    
+    padding:0.5em 1.0em;
+    margin:0 0.5em 0.5em 0;
+    border-radius:0.2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:400;
+    color: 39FF14;
+    background-color: transparent;
+    box-shadow:inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+    text-align:center;
+    /* position:relative; */
+}
+
+.navBar{
+    background-color: #ADFF2F;
+    width: 100%;
+    display: flex;
+}
+
+navButtonsactive{
+     box-shadow:inset 0 0.6em 2em -0.3em rgba(0,0,0,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+    }
+
+.viewbody {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.vendorCard {
+    margin: 40px 40px;
+    padding: 30px 20px;
+    /* display: grid;
+    grid-template-columns: 1fr; */
+    border: 1px solid black;
+    height: 650px;
+    margin-top: 80px;
+    width: 400px;
+    float: left;
+    background-color: white;
+    margin-left: 32px;
+    border-radius: 10px;
+    flex-grow: 0;
+	flex-shrink: 0;
+}
+.radio {
+    display: flex;
+    flex-direction: row;
+    font-size: 60px;
+
+}
+.createVendor {
+    margin: 40px 40px;
+    padding: 30px 20px;
+    /* display: grid;
+    grid-template-columns: 1fr; */
+    border: 1px solid black;
+    height: 500px;
+    margin-top: 80px;
+    width: 400px;
+    float: left;
+    /* background-color: transparent; */
+    background-color: #7b68ee;
+    margin-left: 32px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 0;
+	flex-shrink: 0;
+}
+
+
+.vendorDetailList {
+    list-style: none;
+    margin: 0 -15px;
+    padding-right: 10px
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* border: 1px solid black;
+    height: 500px;
+    margin-top: 180px;
+    width: 400px;
+    float: left;
+    background-color: white;
+    margin-left: 32px;
+    border-radius: 10px; */
+}
+
+body {
+    /* margin: 0px 50px; */
+    /* background-color: lightblue */
+    background-color: #ADFF2F
+}
+
+.menuphoto {
+    height: 300px;
+    width: 300px;
+}
+
+.slogan {
+    height: 400px;
+    width: 400px;
+    align-items: right;
+    justify-content: right;
+    padding-right: 70px;
+}
+
+.loginContainer{
+    display: flex;
+    align-items: flex-end;
+}
+
+.sloganContainer {
+    flex-direction: column;
+    margin-left: auto;
+}
+
+.signInContainer, .signUpContainer {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    /* margin: 40px 40px; */
+    padding: 30px 20px;
+    border: 1px solid black;
+    height: 500px;
+    margin-top: 80px;
+    width: 400px;
+    /* background-color: transparent; */
+    background-color: #7b68ee;
+    margin-left: 70px;
+    border-radius: 10px;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+/* 
+    background-image: url("../assets/blank.png");
+    background-repeat: repeat-x; */
+}
+
+/* @media(max-width: 1000px) {
+  
+    .include-sass  {
+        grid-column: 1/-1;
+
+    }
+    .sass-custom {
+        grid-column: 1/-1;
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+} */
