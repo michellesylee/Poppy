@@ -1,3 +1,5 @@
+//does not work
+
 const auth = {};
 
 auth.isAuth = (req, res, next) => {
@@ -6,7 +8,7 @@ auth.isAuth = (req, res, next) => {
   } else {
     res
       .status(401)
-      .json({ msg: "You are not authorized to view this resource" });
+      .json({ msg: 'You are not authorized to view this resource' });
   }
 };
 

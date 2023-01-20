@@ -4,6 +4,8 @@ import {Routes, Route, useNavigate} from 'react-router-dom';
 import GoogleIcon from '@mui/icons-material/Google';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Button from '@mui/material/Button';
+import { GoogleLogin, GoogleLogout } from 'react-google-login';
+import { gapi } from 'gapi-script';
 
 const useInput = init => {
     const [value, setValue] = useState(init);
@@ -20,6 +22,8 @@ const SignUp = () => {
     const [email, emailOnChange] = useInput('')  
     const navigate = useNavigate();
 
+
+    
     const saveUser = () => {
       if (username === '') {
         console.log('enter a valid username')
@@ -64,6 +68,14 @@ const SignUp = () => {
             <Button href="api/auth/google" referrerpolicy="no-referrer-when-downgrade" variant="contained"  >Sign Up with &nbsp; <GoogleIcon/></Button>
             <br/>
             <Button href="api/auth/google" variant="contained"  referrerpolicy="no-referrer-when-downgrade"  >Sign Up with &nbsp; <LinkedInIcon/></Button>
+            {/* <GoogleLogin
+                    clientId={clientId}
+                    buttonText="Sign in with Google"
+                    onSuccess={onSuccess}
+                    onFailure={onFailure}
+                    cookiePolicy={'single_host_origin'}
+                    isSignedIn={true}
+                /> */}
         </div>
         <div className='sloganContainer'>
             <img className='slogan' src={image} />

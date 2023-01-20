@@ -26,7 +26,6 @@ popupController.viewReviews = async (req,res,next) => {
     const queryString = 'select * from ratings'
     const query = await db.query(queryString);
     res.locals.reviews = query.rows;
-    console.log(res.locals.reviews)
     next();
   }
   catch (err) {
@@ -42,15 +41,14 @@ popupController.viewReviews = async (req,res,next) => {
 
 
 
-
 popupController.editReview = async (req,res,next) => {
-  try {
+        try {
     // const queryString = 'SELECT vendors.name, ratings.rating, ratings.reviewername, ratings.date, ratings.reviewtext from Ratings INNER JOIN Vendors ON  Vendors.vendorID=Ratings.vendor_id'
     const queryString = 'UPDATE RATINGS SET date = $2, reviewtext = $3, rating = $4 WHERE reviewername = $1'
     const values = [req.body.reviewerName, req.body.date, req.body.reviewtext, req.body.givenRating];
-    const query = await db.query(queryString);
-    res.locals.reviews = query.rows;
-    console.log(res.locals.reviews)
+    const query = await db.query(queryString, values);
+    res.locals.rating = query.rows;
+    console.log(res.locals.rating)
     next();
   }
   catch (err) {
@@ -63,10 +61,15 @@ popupController.editReview = async (req,res,next) => {
   }
 }
 
+// const [startDate, setStartDate] = useState(new Date());
+// const [endDate, setEndDate] = useState(new Date());
+
+
+
 popupController.addVendor = async (req,res,next) => {
   try {
-    const queryString = 'INSERT INTO Vendors (Name, FoodCategory, Address, Dates, Time, Menu) VALUES ($1, $2, $3, $4, $5, $6)'
-    const values = [req.body.name, req.body.foodCategory, req.body.address, req.body.dates, req.body.time, req.body.menu];
+    const queryString = 'INSERT INTO Vendors (Name, FoodCategory, Address, Dates, Time, Menu, enddate) VALUES ($1, $2, $3, $4, $5, $6)'
+    const values = [req.body.name, req.body.foodCategory, req.body.address, req.body.startDate, req.body.time, req.body.menu];
     const newVendor = await db.query(queryString, values);
     res.locals.vendors = newVendor.rows;
     next();
@@ -103,7 +106,6 @@ popupController.deleteReview = async (req,res,next) => {
   try {
     const queryString = 'DELETE FROM Ratings WHERE reviewername = $1';
     const values = [req.params.id];
-    console.log(values)
     const deletedReview = await db.query(queryString, values);
     res.locals.deleted = deletedReview;
     next();

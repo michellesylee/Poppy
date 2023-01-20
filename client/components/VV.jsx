@@ -18,6 +18,7 @@ const Review = ({
 const navigate = useNavigate();
 
 const deleteReview = async (reviewername) => {
+  alert(`Are you sure you want to delete this rating?`);
   axios
   .delete(`/api/viewratings/${reviewername}`) // <-- remove ;
   .then(

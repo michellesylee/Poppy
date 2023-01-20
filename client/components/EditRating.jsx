@@ -55,6 +55,8 @@ const EditRating = ({props}) => {
 
     const [rate, setRate] = useState(0);
 
+
+
     const SaveRating = () => {
         const body = {
             vendorid,
@@ -66,7 +68,7 @@ const EditRating = ({props}) => {
           // fetch('http://localhost:3000/api/addvendor', {
             
         fetch('/api/editrating', {
-          method: 'put',
+          method: 'PUT',
           headers: {
               'Content-Type': 'Application/JSON'
           },

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {Routes, Route, useNavigate} from 'react-router-dom';
 import { Link, MemoryRouter } from 'react-router-dom';
-
+import DatePicker from 'react-date-picker'
 
 const useInput = init => {
   const [value, setValue] = useState(init);
@@ -19,6 +19,12 @@ const addVendor = (props) => {
   const [dates, datesOnChange] = useInput('')
   const [time, timeOnChange] = useInput('')
   const [menu, menuOnChange] = useInput('')
+
+  // const [date, setDate] = useState(new Date());
+
+  // const [startDate, setStartDate] = useState(new Date());
+  // const [endDate, setEndDate] = useState(new Date());
+ 
 
   const navigate = useNavigate();
 
@@ -68,9 +74,31 @@ const addVendor = (props) => {
       <br/>
       <input name="address" placeholder="124 Soto St. Glendale" value={address} onChange={addressOnChange} />
       <br/>
-      <label htmlFor="Dates">Dates: </label>
+      <label htmlFor="Start Date">Start Date: </label>
       <br/>
       <input name="dates" placeholder="2/2/23 - 3/3/23" value={dates} onChange={datesOnChange} />
+
+      {/* <DatePicker
+           placeholderText="Start Date"
+       selected={startDate}
+       selectsStart
+       startDate={startDate}
+       endDate={endDate}
+       onChange={date => setStartDate(date)}
+     />
+    <br/>
+    <label htmlFor="End Date">End Date: </label>
+      <br/>
+     <DatePicker
+      placeholderText="End Date"
+       selected={endDate}
+       selectsEnd
+       startDate={startDate}
+       endDate={endDate}
+       minDate={startDate}
+       onChange={date => setEndDate(date)}
+     /> */}
+
       <br/>
       <label htmlFor="Time">Time: </label>
       <br/>
